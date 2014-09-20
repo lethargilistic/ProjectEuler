@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 //Find the unique positive integer whose square has the form 1_2_3_4_5_6_7_8_9_0,
 //where each “_” is a single digit.
 public class ProjectEuler206 {
@@ -6,26 +8,51 @@ public class ProjectEuler206 {
 		//The integer must end in 0 because its square ends in 0.
 		//The Square has 19 digits
 			//The integer may have 10 digits
-				//317_000_000 squared has 19 digits. The Square starts with 1.
-				//499_999_999 squared has 19 digits. The Square starts with 2.
-		for (long loopCount = 3_170_000_000L; loopCount < 4_999_999_999L; loopCount+=10)
+				//1_000_000_000 squared has 19 digits. The Square starts with 1.
+				//1_430_000_000 squared has 19 digits. The Square starts with 2.
+		
+		//TODO: Make the "number % 1e5 / 1e4" operation a function. Didn't think of that in time. ^^;
+		for (long loopCount = 1_000_000_000L; loopCount < 1_430_000_000L; loopCount+=10) //+ 10 because the integer ends in zero.
 		{
-			long number = loopCount * loopCount;
-			if (number / 10e18 == 1)
-				if ((number / 10e16) % 10 == 2)
-					if ((number / 10e14) % 10 == 3)
-						if ((number / 10e12) % 10 == 4)
-							if ((number / 10e10) % 10 == 5)
-								if ((number / 10e8) % 10 == 6)
-									if ((number / 10e6) % 10 == 7)
-										if ((number / 10e4) % 10 == 8)
-											if ((number / 10e2) % 10 == 9)
-												return number;
+			BigInteger number = BigInteger.valueOf(loopCount).multiply(BigInteger.valueOf(loopCount));
+			if ((number.mod(BigInteger.valueOf((long)1e3)).divide(BigInteger.valueOf((long)1e2)).equals(BigInteger.valueOf(9))))
+			{ //number % 1e3 / 1e2 == 9
+				if ((number.mod(BigInteger.valueOf((long)1e5)).divide(BigInteger.valueOf((long)1e4)).equals(BigInteger.valueOf(8))))
+				{ //(number % 1e5 / 1e4 == 8)
+					if ((number.mod(BigInteger.valueOf((long)1e7)).divide(BigInteger.valueOf((long)1e6)).equals(BigInteger.valueOf(7))))
+					{ //number % 1e7 / 1e6 == 7	
+						if ((number.mod(BigInteger.valueOf((long)1e9)).divide(BigInteger.valueOf((long)1e8)).equals(BigInteger.valueOf(6))))
+						{ //number % 1e9 / 1e8 == 6	
+							if ((number.mod(BigInteger.valueOf((long)1e11)).divide(BigInteger.valueOf((long)1e10)).equals(BigInteger.valueOf(5))))
+							{ //number % 1e11 / 1e10 == 5	
+								if ((number.mod(BigInteger.valueOf((long)1e13)).divide(BigInteger.valueOf((long)1e12)).equals(BigInteger.valueOf(4))))
+								{ //number % 1e13 / 1e12 == 4	
+									if ((number.mod(BigInteger.valueOf((long)1e15)).divide(BigInteger.valueOf((long)1e14)).equals(BigInteger.valueOf(3))))
+									{ //number % 1e15 / 1e14 == 3	
+										if ((number.mod(BigInteger.valueOf((long)1e17)).divide(BigInteger.valueOf((long)1e16)).equals(BigInteger.valueOf(2))))
+										{ //number % 1e17 / 1e16 == 2	
+											if ((number.divide(BigInteger.valueOf((long)1e18)).equals(BigInteger.valueOf(1))))
+											{ //number / 1e18 == 1	
+												return loopCount;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
-		return 1;
+		//Ensuring that the method returns. This is an error.
+		return -1;
 	}
 	
 	public static void main(String[] args) {
+//      System.out.println(3171643210L);
+//      System.out.println((long) (3171643210L * 3171643210L));
+//      System.out.println((long) ((3171643210L * 3171643210L) % 1e18));
+   
 		System.out.println(ProjectEuler206.run());
 
 	}
