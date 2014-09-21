@@ -1,9 +1,10 @@
 //Find the sum of the digits in the number 100!
 import java.math.BigInteger;
 
-public class ProjectEuler020 {
+public class ProjectEuler020
+{
 		
-	public static int run()
+	public static long run()
 	{
 		//Multiply numbers from  1 to 100
 		BigInteger num = new BigInteger("1");
@@ -15,12 +16,7 @@ public class ProjectEuler020 {
 		//Convert the result to a string
 		String numberString = num.toString();
 		
-		//Step through the string, summing each digit.
-		int sum = 0;
-		for (int i = 0; i < numberString.length(); i++)
-			sum += Integer.decode(""+numberString.charAt(i));
-		
-		//Return the sum. That's the answer.
-		return sum;
+		//Step through the string, summing each digit. That's the answer.
+		return UPEL.sumDigits(numberString);
 	}
 }

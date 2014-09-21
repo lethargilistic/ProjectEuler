@@ -3,7 +3,8 @@
 
 import java.math.BigInteger;
 
-public class ProjectEuler206 {
+public class ProjectEuler206
+{
 	public static long run()
 	{
 		//The integer must end in 0 because its square ends in 0.

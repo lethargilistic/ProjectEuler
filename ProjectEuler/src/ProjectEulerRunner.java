@@ -20,23 +20,23 @@ public class ProjectEulerRunner
 				break;
 				
 			case 16:
-				System.out.println("Solve Time: Unknown.");
-				System.out.println(ProjectEuler016.run() + " (Not correct)");
+				System.out.println("Solve Time: Unrecorded.");
+				System.out.println(ProjectEuler016.run() + " (Answer: 1366)");
 				break;
 				
 			case 20:
-				System.out.println("Solve Time: Unknown.");
-				System.out.println(ProjectEuler020.run());
+				System.out.println("Solve Time: Unrecorded.");
+				System.out.println(ProjectEuler020.run() + " (Answer: 648)");
 				break;
 				
 			case 30:
-				System.out.println("Solve Time: Unknown.");
-				System.out.println(ProjectEuler030.run());
+				System.out.println("Solve Time: Unrecorded.");
+				System.out.println(ProjectEuler030.run() + " (Answer: 443839)");
 				break;
 				
 			case 206:
-				System.out.println("Solve Time: Unknown.");
-				System.out.println(ProjectEuler206.run());
+				System.out.println("Solve Time: Unrecorded.");
+				System.out.println(ProjectEuler206.run() + " (Answer: 1389019170)");
 				break;
 				
 			default:
