@@ -3,8 +3,6 @@
 //
 //How many such routes are there through a 20×20 grid?
 
-import java.util.Arrays;
-
 public class ProjectEuler015 
 {
 	//Length of the square, width of the square

@@ -15,22 +15,27 @@ public class ProjectEulerRunner
 		switch(choice)
 		{
 			case 15:
-			case 015:
 				System.out.println("Solve Time: Instant.");
 				System.out.println(ProjectEuler015.run() + " (Answer: 137846528820)");
 				break;
 				
+			case 16:
+				System.out.println("Solve Time: Unknown.");
+				System.out.println(ProjectEuler016.run() + " (Not correct)");
+				break;
+				
 			case 20:
-			case 020:
+				System.out.println("Solve Time: Unknown.");
 				System.out.println(ProjectEuler020.run());
 				break;
 				
 			case 30:
-			case 030:
+				System.out.println("Solve Time: Unknown.");
 				System.out.println(ProjectEuler030.run());
 				break;
 				
 			case 206:
+				System.out.println("Solve Time: Unknown.");
 				System.out.println(ProjectEuler206.run());
 				break;
 				
