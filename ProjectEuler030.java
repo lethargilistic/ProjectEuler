@@ -1,4 +1,4 @@
-
+//Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
 public class ProjectEuler030
 {
 	public static boolean isPowerDigitSum(final int num, int power)
