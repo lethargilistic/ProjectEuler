@@ -40,9 +40,4 @@ public class ProjectEuler015
 	{
 		return numberOfPaths(20,20);
 	}
-	
-	public static void main(String[] args)
-	{
-		System.out.println(ProjectEuler015.run());
-	}
 }

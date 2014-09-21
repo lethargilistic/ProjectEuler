@@ -48,13 +48,4 @@ public class ProjectEuler206 {
 		//Ensuring that the method returns. This is an error.
 		return -1;
 	}
-	
-	public static void main(String[] args) {
-//      System.out.println(3171643210L);
-//      System.out.println((long) (3171643210L * 3171643210L));
-//      System.out.println((long) ((3171643210L * 3171643210L) % 1e18));
-   
-		System.out.println(ProjectEuler206.run());
-
-	}
 }

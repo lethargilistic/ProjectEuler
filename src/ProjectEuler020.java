@@ -23,9 +23,4 @@ public class ProjectEuler020 {
 		//Return the sum. That's the answer.
 		return sum;
 	}
-	
-	public static void main(String[] args)
-	{
-		System.out.print(ProjectEuler020.run());
-	}
 }

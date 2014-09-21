@@ -29,9 +29,4 @@ public class ProjectEuler030
 		
 		return sum;
 	}
-	
-	public static void main(String[] args)
-	{
-		System.out.println(ProjectEuler030.run());
-	}
 }
