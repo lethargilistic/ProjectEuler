@@ -9,6 +9,7 @@ public class ProjectEulerRunner
 		//TODO: Check if what's entered is actually an int
 		System.out.println("Enter Problem Number: ");
 		int choice = in.nextInt();
+		in.close();
 		
 		//TODO: Print the answer alongside them.
 		switch(choice)
