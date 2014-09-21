@@ -15,7 +15,7 @@ public class ProjectEulerRunner
 		switch(choice)
 		{
 			case 15:
-				System.out.println("Solve Time: Instant.");
+				System.out.println("Solve Time: Unrecorded.");
 				System.out.println(ProjectEuler015.run() + " (Answer: 137846528820)");
 				break;
 				
@@ -33,6 +33,11 @@ public class ProjectEulerRunner
 				System.out.println("Solve Time: Unrecorded.");
 				System.out.println(ProjectEuler030.run() + " (Answer: 443839)");
 				break;
+			
+			case 92:
+				System.out.println("Solve Time: Unrecorded.");
+				System.out.println(ProjectEuler092.run() + " (Answer: 8581146)");
+				break;	
 				
 			case 206:
 				System.out.println("Solve Time: Unrecorded.");
