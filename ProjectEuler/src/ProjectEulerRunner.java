@@ -11,12 +11,13 @@ public class ProjectEulerRunner
 		int choice = in.nextInt();
 		in.close();
 		
-		//TODO: Print the answer alongside them.
+		//TODO: Print the answer alongside them, approximate solve time.
 		switch(choice)
 		{
 			case 15:
 			case 015:
-				System.out.println(ProjectEuler015.run());
+				System.out.println("Solve Time: Instant.");
+				System.out.println(ProjectEuler015.run() + " (Answer: 137846528820)");
 				break;
 				
 			case 20:
