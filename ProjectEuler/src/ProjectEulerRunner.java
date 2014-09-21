@@ -11,7 +11,7 @@ public class ProjectEulerRunner
 		int choice = in.nextInt();
 		in.close();
 		
-		//TODO: Print the answer alongside them, approximate solve time.
+		//TODO: Print approximate solve time.
 		switch(choice)
 		{
 			case 15:
