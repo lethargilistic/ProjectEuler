@@ -3,7 +3,6 @@ import java.math.BigInteger;
 
 public class ProjectEuler020
 {
-		
 	public static long run()
 	{
 		//Multiply numbers from  1 to 100
