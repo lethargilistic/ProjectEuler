@@ -64,12 +64,6 @@ public class ProjectEulerRunner
 				System.out.println(ProjectEuler206.run() + " (Answer: 1389019170)");
 				break;
 				
-			case 9999:
-				long t = System.currentTimeMillis();
-				System.out.println(Arrays.toString(UPEL.smallestPrimeFactorization(10000)));
-				System.out.println(System.currentTimeMillis() - t);
-				break;
-				
 			default:
 				System.out.println("That problem is unsolved.");
 		}
