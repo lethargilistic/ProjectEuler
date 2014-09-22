@@ -43,6 +43,7 @@ public class ProjectEuler092 {
 	
 	public static int run()
 	{
+		long t = System.currentTimeMillis();
 		//Allocate memory for the boolean array. +1 so we can ignore the [0] element
 		final int LIMIT = 10_000_000;
 		OneOrEightyNine = new boolean[LIMIT+1];
@@ -58,6 +59,7 @@ public class ProjectEuler092 {
 			if (OneOrEightyNine[j] == true)
 				EightyNineCount++;
 		
+		System.out.println("t: " + (System.currentTimeMillis() - t));
 		return EightyNineCount;
 	}
 }

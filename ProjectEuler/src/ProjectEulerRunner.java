@@ -14,10 +14,21 @@ public class ProjectEulerRunner
 		//TODO: Print approximate solve time.
 		switch(choice)
 		{
+//			case NUM:
+//				System.out.println("Solve Time: Unrecorded");
+//				System.out.println(ProjectEulerNUM.run() + " (Answer: Unsolved)");
+//				break;
+		
 			case 8:
 				System.out.println("Solve Time: 96 ms");
 				System.out.println(ProjectEuler008.run() + " (Answer: 23514624000)");
 				break;
+		
+			case 10:
+				System.out.println("Solve Time: 73");
+				System.out.println(ProjectEuler010.run() + " (Answer: 142913828922)");
+				break;
+				
 			case 15:
 				System.out.println("Solve Time: 0 ms");
 				System.out.println(ProjectEuler015.run() + " (Answer: 137846528820)");
