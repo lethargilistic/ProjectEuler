@@ -1,6 +1,7 @@
+//This is unsolved! Incorrect!
+
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class ProjectEuler125 {
 	
@@ -46,5 +47,13 @@ public class ProjectEuler125 {
 		//Find all palindromic numbers
 		Long[] palindromes = getPalindromes(LIMIT);
 		//Find all the numbers that are palindromes
+		
+		long sum = 0;
+		for (long l : palindromes)
+		{
+			sum += l;
+		}
+		
+		return sum;
 	}
 }
