@@ -19,6 +19,8 @@ public class UPEL
 		return primes;
 	}
 	
+	//Return array of elements that are the smallest prime factor for each index.
+	//Based on the Sieve of Eratosthenes.
 	//Pre : limit > 1
 	//Post: spf[0] and spf[1] are not prime numbers. They are given 1. Do not use this placeholder.
 	public static int[] smallestPrimeFactorization(int limit)
@@ -30,29 +32,19 @@ public class UPEL
 		spf[0] = 1;
 		spf[1] = 1;
 		
-		//Fill the array with primes
-		spf[2] = 1;
-		spf[3] = 1; //These two's square roots < 1
-					//They won't set themselves to 1 because of that.
-				
-		for (int i = 4; i <= limit; i++)
+		//Mark the rest
+		for (int i = 2; i < spf.length; i++)
 		{
-			if (i % 2 == 0)	//Divisible by 2
-				spf[i] = 2;
-			else if (UPEL.sumDigits(Integer.toString(i)) % 3 == 0) //Divisible by 3
-				spf[i] = 3;
-			else if (i % 5 == 0 && i != 5) //Divisible by 5
-				spf[i] = 5;
-			else if (i % 7 == 0 && i != 7) //Divisible by 7
-				spf[i] = 7;
-			else
-				//Only need to check until the SqRt
-				for (int j = 1, limitSqRt = (int) Math.sqrt(i); j <= limitSqRt; j++)
-					if (i % j == 0)
-					{
-						spf[i] = j;
-						continue;
-					}
+			//A prime is found
+			if (spf[i] == 0)
+			{
+				//Prime spf is 1
+				spf[i] = 1;
+				//Mark the multiples of the prime with it as their spf
+				for (int j = 2 * i; j < spf.length; j += i)
+					if (spf[j] == 0) //Do not override another, smaller spf that has already been imput9999
+						spf[j] = i;
+			}
 		}
 		
 		return spf;

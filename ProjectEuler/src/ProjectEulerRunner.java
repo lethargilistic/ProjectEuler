@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.Arrays;
 public class ProjectEulerRunner
 {
 	public static void main(String[] args)
@@ -54,9 +54,20 @@ public class ProjectEulerRunner
 				System.out.println(ProjectEuler092.run() + " (Answer: 8581146)");
 				break;	
 				
+			case 125:
+				System.out.println("Solve Time: Unrecorded");
+				System.out.println(ProjectEuler125.run() + " (Answer: Unsolved)");
+				break;
+				
 			case 206:
 				System.out.println("Solve Time: Unrecorded.");
 				System.out.println(ProjectEuler206.run() + " (Answer: 1389019170)");
+				break;
+				
+			case 9999:
+				long t = System.currentTimeMillis();
+				System.out.println(Arrays.toString(UPEL.smallestPrimeFactorization(10000)));
+				System.out.println(System.currentTimeMillis() - t);
 				break;
 				
 			default:
