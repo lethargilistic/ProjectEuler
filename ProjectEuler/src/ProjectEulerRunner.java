@@ -49,11 +49,17 @@ public class ProjectEulerRunner
 				System.out.println(ProjectEuler030.run() + " (Answer: 443839)");
 				break;
 			
+			case 32:
+				System.out.println("Solve Time: 368");
+				System.out.println(ProjectEuler032.run() + " (Answer: 45228)");
+				break;
+				
 			case 92:
 				System.out.println("Solve Time: Unrecorded.");
 				System.out.println(ProjectEuler092.run() + " (Answer: 8581146)");
 				break;	
-				
+			
+			//NOTE: UNSOLVED
 			case 125:
 				System.out.println("Solve Time: Unrecorded");
 				System.out.println(ProjectEuler125.run() + " (Answer: Unsolved)");
