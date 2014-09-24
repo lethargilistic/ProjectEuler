@@ -1,57 +1,116 @@
 //This is unsolved! Incorrect!
+//Find the sum of all the numbers less than 108
+//that are both palindromic and can be written as the sum of consecutive squares.
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectEuler125 {
 	
-	public static Long[] getPalindromes(int lim)
+	//POST: Returns the reverse of num, with a 1 in the left-most position to hold onto zeroes.
+	public static long reverse(long num)
 	{
-		//Get number of digits in limit
-		int maxEvenLength = Integer.toString(lim).length() / 2;
-		int maxOddLength  = maxEvenLength-1;
+		long reverse = 1;
+		while (num > 0)
+		{
+			reverse *= 10;
+			reverse += num % 10;
+			num /= 10;
+		}
 		
-		int maximumHalf = 9 * (int) Math.pow(10, maxEvenLength);
-		
-		//Generate Palindromes
+		return reverse;
+	}
+	
+	//TODO:Refactor to be general. Currently just returns all palindromes to 10e8.
+	public static List<Long> getPalindromes()
+	{
+		//Allocate memory
 		List<Long> palind = new ArrayList<Long>();
+
+		//Generate Palindromes
+		
 		
 		//Those less than 100
-		for (int i = 1; i < 100; i++)
+		for (int i = 1; i < 10; i++)
 		{
-			palind.add(Long.decode(new String(""+ i + i)));
+			palind.add(Long.decode(""+i));
 		}
-		//Greater than 100
-		for (int outerPart = 1; outerPart < maximumHalf; outerPart++)
+		for (int i = 1; i < 10; i++)
 		{
-			StringBuilder n = new StringBuilder();
-			n.append(outerPart);
-			//odd length
-			for (int innerPart = 1, maxLength = maxEvenLength - (2 * Integer.toString(outerPart).length()); Math.log10(innerPart) < maxLength; innerPart++)
-			{
-				n.append(innerPart + outerPart);
-				palind.add(Long.decode(n.toString()));
-				n.delete(Long.toString(outerPart).length()+1, n.length());
-			}
-			//even length
-			palind.add(Long.decode(n.append(outerPart).toString()));
+			palind.add(Long.decode(""+ i + i));
 		}
 		
-		return palind.toArray(new Long[0]);
+		//101 to 999
+		for (int firstPart = 1; firstPart < 10; firstPart++)
+		{
+			for (int middlePart = 0; middlePart <= 9; middlePart++)
+			{
+				palind.add(Long.decode(""+firstPart + middlePart + Long.toString(reverse(firstPart)).substring(1)));
+			}
+		}
+		
+		//1001 to 9999 //10000 10e4
+		for (int firstHalf = 10; firstHalf < 100; firstHalf++)
+		{
+			palind.add(Long.decode(""+firstHalf  + Long.toString(reverse(firstHalf)).substring(1)));
+		}
+
+		//10001 to 99999 //10e5
+		for (int firstPart = 10; firstPart < 100; firstPart++)
+		{
+			for (int middlePart = 0; middlePart <= 9; middlePart++)
+			{
+				palind.add(Long.decode(""+firstPart + middlePart + Long.toString(reverse(firstPart)).substring(1)));
+			}
+		}
+		
+		//100001 to 999999 //10e6
+		for (int firstHalf = 100; firstHalf < 1000; firstHalf++)
+		{
+			palind.add(Long.decode(""+firstHalf  + Long.toString(reverse(firstHalf)).substring(1)));
+		}
+		
+		//1000001 to 9999999 //10e7
+		for (int firstPart = 100; firstPart < 1000; firstPart++)
+		{
+			for (int middlePart = 0; middlePart <= 9; middlePart++)
+			{
+				palind.add(Long.decode(""+firstPart + middlePart + Long.toString(reverse(firstPart)).substring(1)));
+			}
+		}
+		
+		//10000001 to 99999999 //10e8
+		for (int firstHalf = 1000; firstHalf < 10000; firstHalf++)
+		{
+			palind.add(Long.decode(""+firstHalf  + Long.toString(reverse(firstHalf)).substring(1)));
+		}
+		
+		return palind;
 	}
 	
 	public static long run()
 	{
-		final int LIMIT = (int) 10e8;
+		final long LIMIT = (long) 10e8;
 		
 		//Find all palindromic numbers
-		Long[] palindromes = getPalindromes(LIMIT);
-		//Find all the numbers that are palindromes
+		List<Long> palindromes = getPalindromes();
 		
+		//Find all the numbers that are sums of consecutive squares.
 		long sum = 0;
-		for (long l : palindromes)
+		
+		for (long i = 2; i < Math.sqrt(LIMIT); i++)
 		{
-			sum += l;
+			long product = (long) Math.pow(i, 2);
+			for (long j = 1; i - j > 0 && product < LIMIT ; j++)
+			{
+				product += Math.pow(i-j, 2);
+				
+				if (palindromes.contains(product))
+				{
+					sum += palindromes.remove(palindromes.indexOf(product));;
+					//Remove so that we only count palindromic sums once.
+				}
+			}
 		}
 		
 		return sum;
