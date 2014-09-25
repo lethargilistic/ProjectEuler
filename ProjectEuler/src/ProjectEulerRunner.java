@@ -34,7 +34,7 @@ public class ProjectEulerRunner
 				break;
 				
 			case 30:
-				System.out.println("Solve Time: Unrecorded.");
+				System.out.println("Solve Time: 360.");
 				System.out.println(ProjectEuler030.run() + " (Answer: 443839)");
 				break;
 			
