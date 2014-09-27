@@ -40,14 +40,22 @@ public final class ProjectEuler011 {
 		fillGrid();
 		
 		//Solve all horizontal
-		for (int row = 3; row < grid.length; row++)
+		for (int row = 0; row < grid.length; row++)
 			for (int col = 3; col < grid[row].length; col++)
 			{
 				int product = grid[row][col-3] * grid[row][col-2] * grid[row][col-1] * grid[row][col];
 				if (product > maxProduct)
 					maxProduct = product;
 			}
+		
 		//Solve all vertical
+		for (int col = 0; col < grid.length; col++)
+			for (int row = 3; row < grid[row].length; row++)
+			{
+				int product = grid[row-3][col] * grid[row-2][col] * grid[row-1][col] * grid[row][col];
+				if (product > maxProduct)
+					maxProduct = product;
+			}
 		
 		//Solve all left diagonals
 		
