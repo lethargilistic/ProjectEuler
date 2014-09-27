@@ -60,5 +60,7 @@ public final class ProjectEuler011 {
 		//Solve all left diagonals
 		
 		//Solve all right diagonals
+		
+		return maxProduct;
 	}
 }

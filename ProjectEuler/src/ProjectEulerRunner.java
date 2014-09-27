@@ -1,5 +1,6 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.Arrays;
+
 public class ProjectEulerRunner
 {
 	public static void main(String[] args)
@@ -14,10 +15,10 @@ public class ProjectEulerRunner
 		//TODO: Print approximate solve time.
 		switch(choice)
 		{
-//			case NUM:
-//				System.out.println("Solve Time: Unrecorded");
-//				System.out.println(ProjectEulerNUM.run() + " (Answer: Unsolved)");
-//				break;
+//		case NUM:
+//		System.out.println("Solve Time: Unrecorded");
+//		System.out.println(ProjectEulerNUM.run() + " (Answer: Unsolved)");
+//		break;
 		
 			case 8:
 				System.out.println("Solve Time: 96 ms");
@@ -27,6 +28,18 @@ public class ProjectEulerRunner
 			case 10:
 				System.out.println("Solve Time: 73");
 				System.out.println(ProjectEuler010.run() + " (Answer: 142913828922)");
+				break;
+
+			case 11:
+				System.out.println("Solve Time: Unrecorded");
+				try
+				{
+					System.out.println(ProjectEuler011.run() + " (Answer: Unsolved)");
+				}
+				catch(FileNotFoundException e)
+				{
+					System.out.print("Problem 011 File Not Found."); System.exit(1);
+				}
 				break;
 				
 			case 15:
